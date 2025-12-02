@@ -43,7 +43,24 @@
     border-bottom: 2px solid #1E90FF;  /* optional underline */
     padding-bottom: 0.25rem; }
     footer { text-align: center; padding: 2rem; font-size: 0.9rem; color: #666; }
+    .text-image {
+      display: flex;             /* aligns image and text side by side */
+      align-items: flex-start;   /* aligns text with top of image */
+      gap: 1.5rem;               /* space between image and text */
+      margin: 2rem 0;            /* spacing above/below this block */
+    }
     
+    .text-image img {
+      width: 200px;              /* or any preferred width */
+      height: auto;              /* keeps aspect ratio */
+      border-radius: 0.5rem;     /* optional rounded corners */
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* subtle shadow */
+    }
+    
+    .text-image p {
+      flex: 1;                   /* text takes remaining space */
+      line-height: 1.6;
+    }
   </style>
 </head>
 <body>
@@ -74,9 +91,11 @@
   <p>All attendees will leave with reusable code, annotated Python notebooks, and complete workflows that can be easily adapted to their own datasets. The programme will be delivered by an interdisciplinary team from the University of Cambridge, the British Antarctic Survey, and the Scottish Association of Marine Sciences.</p>
 </section>
 
-  <div class="image-container">
-    <img src="assets/photo1.png" alt="Benthic ecosystem example">
-  </div>
+ <div class="text-image">
+  <img src="assets/photo1.png" alt="Benthic ecosystem example">
+  <p></p>
+</div>
+
 <section id="programme" class="content">
   <h2 class="section-header">Programme</h2>
 
@@ -112,9 +131,11 @@
 </ul>
   </section>
  
-  <div class="image-container">
-    <img src="assets/photo2.png" alt="Computer vision analysis example">
-  </div>
+  <div class="text-image">
+  <img src="assets/photo2.png" alt="Benthic ecosystem example">
+  <p></p>
+</div>
+
   <section id="Attendance" class="content">
     <h2 class="section-header">Attendance Information</h2>
     <p>The workshop is free to attend, with limited funding available to support accommodation and travel costs for those most in need. Priority will be given PhD students and Early Career Researchers working in benthic ecology, with some experience in programming. Next, PhD and ECRs with a more general interest will be offered places, followed by other UKRO funding-eligible marine ecologists. Remaining places will be offered to UK-based people working in a sector aligned with UKRI science. Lunch will be provided on both days, along with a networking dinner on 10 March. Unfortunatley we are not able to support virtual attendance of the workshop. </p>
