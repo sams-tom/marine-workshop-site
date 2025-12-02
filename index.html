@@ -8,8 +8,32 @@
     body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f7f7f7; color: #222; }
     header { padding: 1.2rem 2rem; background: white; border-bottom: 1px solid #ddd; }
     nav a { margin-right: 1.5rem; text-decoration: none; color: #222; font-weight: 600; }
-    .hero { padding: 6rem 2rem; text-align: center; background: #e7eef7; }
-    .hero h1 { margin: 0; font-size: 2.8rem; }
+    .hero {
+    background-image: url('assets/hero-photo.jpg'); /* path to your image */
+    background-size: cover;        /* fills the section */
+    background-position: center;   /* centers the image */
+    background-repeat: no-repeat;
+    height: 70vh;                  /* adjust height (70% of viewport) */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;       /* vertically center text */
+    align-items: center;           /* horizontally center text */
+    color: white;                  /* text color */
+    text-align: center;
+    padding: 0 1rem;
+    }
+    
+    .hero h1 {
+        font-size: 3rem;
+        margin-bottom: 0.5rem;
+        text-shadow: 2px 2px 8px rgba(0,0,0,0.7); /* makes text readable over photo */
+    }
+    
+    .hero p {
+        font-size: 1.5rem;
+        text-shadow: 1px 1px 5px rgba(0,0,0,0.6);
+    }
+
     .content { max-width: 700px; margin: 3rem auto; padding: 0 2rem; line-height: 1.6; }
     .section-header {
     color: #1E90FF;       /* nice blue hue */
@@ -19,6 +43,7 @@
     border-bottom: 2px solid #1E90FF;  /* optional underline */
     padding-bottom: 0.25rem; }
     footer { text-align: center; padding: 2rem; font-size: 0.9rem; color: #666; }
+    
   </style>
 </head>
 <body>
@@ -50,7 +75,9 @@
   <p>All attendees will leave with reusable code, annotated Python notebooks, and complete workflows that can be easily adapted to their own datasets. The programme will be delivered by an interdisciplinary team from the University of Cambridge, the British Antarctic Survey, and the Scottish Association of Marine Sciences.</p>
 </section>
 
-
+  <div class="image-container">
+    <img src="assets/photo1.jpg" alt="Benthic ecosystem example">
+  </div>
 <section id="programme" class="content">
   <h2 class="section-header">Programme</h2>
 
@@ -86,6 +113,9 @@
 </ul>
   </section>
  
+  <div class="image-container">
+    <img src="assets/photo2.jpg" alt="Computer vision analysis example">
+  </div>
   <section id="Attendance" class="content">
     <h2 class="section-header">Attendance Information</h2>
     <p>The workshop is free to attend, with limited funding available to support accommodation and travel costs for those most in need. Priority will be given PhD students and Early Career Researchers working in benthic ecology, with some experience in programming. Next, PhD and ECRs with a more general interest will be offered places, followed by other UKRO funding-eligible marine ecologists. Remaining places will be offered to UK-based people working in a sector aligned with UKRI science. Lunch will be provided on both days, along with a networking dinner on 10 March. Unfortunatley we are not able to support virtual attendance of the workshop. </p>
