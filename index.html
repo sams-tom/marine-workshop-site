@@ -50,20 +50,13 @@
       margin: 2rem 0;            /* spacing above/below this block */
     }
     
-    .text-image img {
-      width: 200px;              /* or any preferred width */
-      height: auto;              /* keeps aspect ratio */
-      border-radius: 0.5rem;     /* optional rounded corners */
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* subtle shadow */
-    }
-    
-    .text-image p {
-      flex: 1;                   /* text takes remaining space */
-      line-height: 1.6;
-    }
-    .text-image.reverse {
-      flex-direction: row-reverse;
-    }
+    .inline-image {
+  float: left;               /* or right if you want it on the other side */
+  width: 300px;              /* adjust size as needed */
+  margin: 0 1rem 1rem 0;     /* spacing around the image */
+  border-radius: 0.5rem;     /* optional rounded corners */
+}
+
   </style>
 </head>
 <body>
@@ -91,13 +84,9 @@
 
   <p>Recent advances in computer vision methods can help to clear this bottleneck, assisting with tasks like taxonomic identification, abundance estimate, and habitat mapping. These methods have the potential to transform how benthic ecosystems are studied, enabling ecologists to work faster, more consistently, and at far greater scales. But despite this promise, these tools remain underutilised in benthic ecology. Without a formal education in computer science, many benthic ecologists do not understand the methods underpinning these computer vision approaches, leading to a lack of confidence in how to apply them to their own workflows. Additionally, marine imagery presents distinct complexities for computer vision systems, namely the presence of turbidity, variable lighting, and cluttered scenes which cause “off-the-shelf" models to perform poorly. This skills gap has slowed the community’s ability to harness emerging computational approaches and adapt them to their own workflows. This workshop has been designed to address these challenges directly. It will equip benthic ecologists—primarily early-career researchers with little programming experience and no prior machine learning background—with the foundational knowledge, skills, and confidence required to integrate computer vision into their research.</p>
 
-  <p>All attendees will leave with reusable code, annotated Python notebooks, and complete workflows that can be easily adapted to their own datasets. The programme will be delivered by an interdisciplinary team from the University of Cambridge, the British Antarctic Survey, and the Scottish Association of Marine Sciences.</p>
+  <p>All attendees will leave with reusable code, annotated Python notebooks, and complete workflows that can be easily adapted to their own datasets. The programme will be delivered by an interdisciplinary team from the University of Cambridge, the British Antarctic Survey, and the Scottish Association of Marine Sciences.   <img src="assets/photo1.png" alt="Benthic ecosystem example" class="inline-image">
+</p>
 </section>
-
- <div class="text-image">
-  <img src="assets/photo1.png" alt="Benthic ecosystem example">
-  <p></p>
-</div>
 
 <section id="programme" class="content">
   <h2 class="section-header">Programme</h2>
@@ -117,7 +106,8 @@
     <li><em>Afternoon practical:</em> Training and evaluating models using the dataset from Day 1.</li>
   </ul>
 
-  <p>By the end of the workshop, participants will understand a full workflow—from building high-quality datasets to training and evaluating models for benthic ecological research.</p>
+  <p>By the end of the workshop, participants will understand a full workflow—from building high-quality datasets to training and evaluating models for benthic ecological research.   <img src="assets/photo2.png" alt="Benthic ecosystem example" class="inline-image">
+</p>
 </section>
 
 <section id="learning" class="content">
@@ -134,10 +124,6 @@
 </ul>
   </section>
  
-  <div class="text-image reverse">
-  <img src="assets/photo2.png" alt="Benthic ecosystem example">
-  <p></p>
-</div>
 
   <section id="Attendance" class="content">
     <h2 class="section-header">Attendance Information</h2>
