@@ -3,68 +3,155 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bridging the Skills Gap: Computer Vision Training for Marine Ecologists</title>
+  <title>Bridging the Skills Gap: Computer Vision Workshop</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Roboto&display=swap" rel="stylesheet">
+
   <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f7f7f7; color: #222; }
-    header { padding: 1.2rem 2rem; background: white; border-bottom: 1px solid #ddd; }
-    nav a { margin-right: 1.5rem; text-decoration: none; color: #222; font-weight: 600; }
+    /* 1️⃣ Base Styles */
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #fdfdfd;
+      color: #222;
+      line-height: 1.7;
+    }
+
+    a {
+      color: #1E90FF;
+      text-decoration: none;
+    }
+    a:hover {
+      color: #1C75BC;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 1.2rem 2rem;
+      border-bottom: 1px solid #ddd;
+      z-index: 1000;
+    }
+
+    nav a {
+      margin-right: 1.5rem;
+      font-weight: 600;
+    }
+
+    /* 2️⃣ Hero Section */
     .hero {
-    background-image: url('assets/hero-photo.png'); /* path to your image */
-    background-size: cover;        /* fills the section */
-    background-position: center;   /* centers the image */
-    background-repeat: no-repeat;
-    height: 70vh;                  /* adjust height (70% of viewport) */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;       /* vertically center text */
-    align-items: center;           /* horizontally center text */
-    color: white;                  /* text color */
-    text-align: center;
-    padding: 0 1rem;
+      position: relative;
+      background: url('assets/hero-photo.png') center/cover no-repeat;
+      height: 80vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      padding: 0 1rem;
     }
-    
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      top:0; left:0; right:0; bottom:0;
+      background: rgba(0,0,0,0.4); /* dark overlay */
+    }
+
+    .hero h1, .hero p, .hero .button {
+      position: relative;
+      z-index: 1;
+    }
+
     .hero h1 {
-        font-size: 3rem;
-        margin-bottom: 0.5rem;
-        text-shadow: 2px 2px 8px rgba(0,0,0,0.7); /* makes text readable over photo */
+      font-family: 'Montserrat', sans-serif;
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
     }
-    
+
     .hero p {
-        font-size: 1.5rem;
-        text-shadow: 1px 1px 5px rgba(0,0,0,0.6);
+      font-size: 1.5rem;
+      text-shadow: 1px 1px 5px rgba(0,0,0,0.6);
+      margin-bottom: 1.5rem;
     }
 
-    .content { max-width: 700px; margin: 3rem auto; padding: 0 2rem; line-height: 1.6; }
+    .hero .button {
+      background-color: #1E90FF;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 0.5rem;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    .hero .button:hover {
+      background-color: #1C75BC;
+    }
+
+    /* 3️⃣ Sections */
+    section {
+      max-width: 800px;
+      margin: 4rem auto;
+      padding: 0 2rem;
+    }
+
     .section-header {
-    color: #1E90FF;       /* nice blue hue */
-    font-size: 1.75rem;   /* bigger than normal text */
-    font-weight: bold;    
-    margin-bottom: 1rem;  /* spacing below header */
-    border-bottom: 2px solid #1E90FF;  /* optional underline */
-    padding-bottom: 0.25rem; }
-    footer { text-align: center; padding: 2rem; font-size: 0.9rem; color: #666; }
-    .text-image {
-      display: flex;             /* aligns image and text side by side */
-      align-items: flex-start;   /* aligns text with top of image */
-      gap: 1.5rem;               /* space between image and text */
-      margin: 2rem 0;            /* spacing above/below this block */
+      font-family: 'Montserrat', sans-serif;
+      color: #1E90FF;
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid #1E90FF;
+      padding-bottom: 0.25rem;
     }
-    
-    .inline-image {
-  float: left;               /* or right if you want it on the other side */
-  width: 300px;              /* adjust size as needed */
-  margin: 0 1rem 1rem 0;     /* spacing around the image */
-  border-radius: 0.5rem;     /* optional rounded corners */
-}
-   .inline-image-right {
-  float: right;               /* or right if you want it on the other side */
-  width: 300px;              /* adjust size as needed */
-  margin: 0 1rem 1rem 0;     /* spacing around the image */
-  border-radius: 0.5rem;     /* optional rounded corners */
-}
 
+    /* 4️⃣ Images */
+    .inline-image {
+      float: left;
+      margin: 0 1.5rem 1rem 0;
+      width: 40%;
+      border-radius: 0.5rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    /* Clear floats */
+    .clearfix::after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    /* 5️⃣ Cards for info */
+    .card {
+      background: #fff;
+      padding: 1.5rem;
+      border-radius: 0.5rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+      margin-bottom: 2rem;
+    }
+
+    /* 6️⃣ Footer */
+    footer {
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+      color: #666;
+      background: #f7f7f7;
+    }
+
+    /* 7️⃣ Responsive */
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2rem; }
+      .hero p { font-size: 1.2rem; }
+      .inline-image { float: none; width: 100%; margin: 0 0 1rem 0; }
+    }
   </style>
 </head>
+
 <body>
   <header>
     <nav>
@@ -86,9 +173,9 @@
 <section id="about" class="content">
   <h2 class="section-header">About</h2>
 
-  <p>Modern marine ecology, particularly the study of benthic ecosystems, is increasingly driven by the acquisition of large volumes of imagery. From towed camera systems, remote operated vehicles and Autonomous Underwater Vehicles, underwater imaging systems now capture vast quantities of visual data. However, the interpretation of this imagery is slow, costly, and often inconsistent, creating a fundamental bottleneck that restricts the scale and speed of ecological insight.  <img src="assets/photo1.png" alt="Benthic ecosystem example" class="inline-image"> </p>
+  <p>Modern marine ecology, particularly the study of benthic ecosystems, is increasingly driven by the acquisition of large volumes of imagery. From towed camera systems, remote operated vehicles and Autonomous Underwater Vehicles, underwater imaging systems now capture vast quantities of visual data. However, the interpretation of this imagery is slow, costly, and often inconsistent, creating a fundamental bottleneck that restricts the scale and speed of ecological insight.  </p>
 
-  <p>Recent advances in computer vision methods can help to clear this bottleneck, assisting with tasks like taxonomic identification, abundance estimate, and habitat mapping. These methods have the potential to transform how benthic ecosystems are studied, enabling ecologists to work faster, more consistently, and at far greater scales. But despite this promise, these tools remain underutilised in benthic ecology. Without a formal education in computer science, many benthic ecologists do not understand the methods underpinning these computer vision approaches, leading to a lack of confidence in how to apply them to their own workflows. Additionally, marine imagery presents distinct complexities for computer vision systems, namely the presence of turbidity, variable lighting, and cluttered scenes which cause “off-the-shelf" models to perform poorly. This skills gap has slowed the community’s ability to harness emerging computational approaches and adapt them to their own workflows. This workshop has been designed to address these challenges directly. It will equip benthic ecologists—primarily early-career researchers with little programming experience and no prior machine learning background—with the foundational knowledge, skills, and confidence required to integrate computer vision into their research.</p>
+  <p>Recent advances in computer vision methods can help to clear this bottleneck, assisting with tasks like taxonomic identification, abundance estimate, and habitat mapping. These methods have the potential to transform how benthic ecosystems are studied, enabling ecologists to work faster, more consistently, and at far greater scales. But despite this promise, these tools remain underutilised in benthic ecology. Without a formal education in computer science, many benthic ecologists do not understand the methods underpinning these computer vision approaches, leading to a lack of confidence in how to apply them to their own workflows. Additionally, marine imagery presents distinct complexities for computer vision systems, namely the presence of turbidity, variable lighting, and cluttered scenes which cause “off-the-shelf" models to perform poorly. This skills gap has slowed the community’s ability to harness emerging computational approaches and adapt them to their own workflows. This workshop has been designed to address these challenges directly. It will equip benthic ecologists—primarily early-career researchers with little programming experience and no prior machine learning background—with the foundational knowledge, skills, and confidence required to integrate computer vision into their research. <img src="assets/photo1.png" alt="Benthic ecosystem example" class="inline-image"> </p>
 
   <p>All attendees will leave with reusable code, annotated Python notebooks, and complete workflows that can be easily adapted to their own datasets. The programme will be delivered by an interdisciplinary team from the University of Cambridge, the British Antarctic Survey, and the Scottish Association of Marine Sciences.
 </p>
@@ -97,7 +184,7 @@
 <section id="programme" class="content">
   <h2 class="section-header">Programme</h2>
 
-  <p>The workshop will run over two days, hosted in-person at the British Antarctic Survey in Cambridge, 10–11 March 2026. Teaching will be delivered through two complementary elements: accessible lectures introducing key concepts, and guided hands-on practicals using a real benthic dataset. <img src="assets/photo2.png" alt="Benthic ecosystem example" class="inline-image-right"></p>
+  <p>The workshop will run over two days, hosted in-person at the British Antarctic Survey in Cambridge, 10–11 March 2026. Teaching will be delivered through two complementary elements: accessible lectures introducing key concepts, and guided hands-on practicals using a real benthic dataset.</p>
 
   <p><strong>Day 1 – Foundations</strong></p>
   <ul>
@@ -106,7 +193,7 @@
     <li><em>Evening:</em> Reception dinner.</li>
   </ul>
 
-  <p><strong>Day 2 – Applications</strong></p>
+  <p><strong>Day 2 – Applications</strong>  <img src="assets/photo2.png" alt="Benthic ecosystem example" class="inline-image-right"></p>
   <ul>
     <li><em>Morning lectures:</em> Model training, evaluation, and best practice for ecological workflows.</li>
     <li><em>Afternoon practical:</em> Training and evaluating models using the dataset from Day 1.</li>
